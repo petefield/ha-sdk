@@ -21,11 +21,12 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
-    - name: GitVersion action
-      uses: nmcc/actions-gitversion@v1
-      with:
-          path-to-gitversion : GitVersion
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name : pack
+      run: dotnet pack --output nupkgs
+    - name : push
+      run: dotnet nuget push nupkgs/ha.sdk.nupkg -k oy2mj6efucshmf7nbmeq4e2idfm66frefddqlr4z3wafci
+  
