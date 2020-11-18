@@ -20,7 +20,7 @@ jobs:
       with:
           gitversion-version: 5.1.1
           run-gitversion: true
-    - run: GitVersion  
+    - run: GitVersion /showconfig
     - name: Install dependencies
       run: dotnet restore
     - name: Build
