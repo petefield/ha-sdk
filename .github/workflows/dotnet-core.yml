@@ -23,7 +23,7 @@ jobs:
       run: dotnet restore
     - name: GitVersion action
       uses: nmcc/actions-gitversion@v1
-        with:
+      with:
           path-to-gitversion : GitVersion
     - name: Build
       run: dotnet build --configuration Release --no-restore
