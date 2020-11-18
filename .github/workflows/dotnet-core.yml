@@ -21,6 +21,7 @@ jobs:
           gitversion-version: 5.1.1
           run-gitversion: true
     - run: GitVersion /showconfig
+      working-directory: $GITHUB_WORKSPACE	
     - name: Install dependencies
       run: dotnet restore
     - name: Build
