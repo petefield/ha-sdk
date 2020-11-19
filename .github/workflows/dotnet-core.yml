@@ -19,6 +19,8 @@ jobs:
       run: wget https://github.com/GitTools/GitVersion/releases/download/5.5.1/gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
+    - name: Run GitVersion
+      run: ls
     - name: Install dependencies
       run: dotnet restore
     - name: Build
