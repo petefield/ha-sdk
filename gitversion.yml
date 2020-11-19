@@ -1,7 +1,7 @@
 assembly-versioning-scheme: MajorMinorPatchTag
 assembly-file-versioning-scheme: MajorMinorPatchTag
 assembly-informational-format: '{MajorMinorPatch}+{BranchName}+{ShortSha}'
-mode: Mainline
+mode: ContinuousDelivery
 branches:
   release:
     mode: ContinuousDelivery
