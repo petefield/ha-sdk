@@ -24,7 +24,7 @@ jobs:
     - name: Run GitVersion
       run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
     - name : show env
-      run:  $GITHUB_ENV 
+      run:  echo $GitVersion_NuGetVersion 
     - name: Install dependencies
       run: dotnet restore
     - name: Build
