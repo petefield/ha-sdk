@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>ha.sdk</PackageId>
-    <Version>0.0.2-alpha</Version>
     <Authors>PeteField</Authors>
     <Company>CloudyFish</Company>
   </PropertyGroup>
