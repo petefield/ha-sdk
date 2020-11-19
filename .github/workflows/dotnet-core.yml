@@ -20,7 +20,7 @@ jobs:
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Run GitVersion
-      run: ./GitVersion
+      run: ./gitversion
     - name: Install dependencies
       run: dotnet restore
     - name: Build
