@@ -18,7 +18,7 @@ jobs:
     - name: GitHub Action to Setup GitVersion
       uses: StanleyGoldman/setup-gitversion@v1.0.1
       with:
-          gitversion-version: 5.1.1
+          gitversion-version: 5.5.1
           run-gitversion: true
     - run: GitVersion /showconfig
       working-directory: $GITHUB_WORKSPACE	
