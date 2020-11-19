@@ -15,10 +15,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: GitHub Action to Setup GitVersion
+    - name: Download GitVersion
       run: wget https://github.com/GitTools/GitVersion/releases/download/5.5.1/gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
-    - run: GitVersion /showconfig
-      working-directory: $GITHUB_WORKSPACE	
+    - name: Extract GitVersion
+      run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Install dependencies
       run: dotnet restore
     - name: Build
