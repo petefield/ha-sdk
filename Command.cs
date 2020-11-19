@@ -1,6 +1,4 @@
-﻿
-
-namespace ha.sdk
+﻿namespace ha.sdk
 {
     public class Command : ICommand
     {
