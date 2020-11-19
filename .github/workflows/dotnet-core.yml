@@ -32,7 +32,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name : pack
-      run: dotnet pack --output nupkgs
+      run: dotnet pack --output nupkgs /p:Version=$(GitVersion_NuGetVersion)
     - name : push
       run: dotnet nuget push nupkgs/ha.sdk.nupkg -k oy2mj6efucshmf7nbmeq4e2idfm66frefddqlr4z3wafci
   
