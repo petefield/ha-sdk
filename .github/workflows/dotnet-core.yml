@@ -22,7 +22,7 @@ jobs:
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Run GitVersion
-      run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo
+      run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
     - name: Install dependencies
       run: dotnet restore
     - name: Build
