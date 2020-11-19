@@ -16,10 +16,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: GitHub Action to Setup GitVersion
-      uses: StanleyGoldman/setup-gitversion@v1.0.1
-      with:
-          gitversion-version: 5.2.4
-          run-gitversion: true
+      run: wget https://github.com/GitTools/GitVersion/releases/download/5.5.1/gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - run: GitVersion /showconfig
       working-directory: $GITHUB_WORKSPACE	
     - name: Install dependencies
