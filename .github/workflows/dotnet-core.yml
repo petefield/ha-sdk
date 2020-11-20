@@ -35,16 +35,16 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name : pack
       run: dotnet pack --output nupkgs /p:Version=$GitVersion_NuGetVersion
-    - name : push
-      env:
-          NugetPushKey: ${{ secrets.NugetPushKey }}
-      run: dotnet nuget push nupkgs/ha.sdk.$GitVersion_NuGetVersion.nupkg -k $NugetPushKey
+    # - name : push
+    #   env:
+    #       NugetPushKey: ${{ secrets.NugetPushKey }}
+    #   run: dotnet nuget push nupkgs/ha.sdk.$GitVersion_NuGetVersion.nupkg -k $NugetPushKey
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: v${{ GitVersion_NuGetVersion }}
-        release_name: Release ${{ GitVersion_NuGetVersion }}
+        tag_name: v${{ GitVersion.NuGetVersion }}
+        release_name: Release ${{ GitVersion.NuGetVersion }}
   
