@@ -1,30 +1,22 @@
-<<<<<<< Updated upstream
 assembly-versioning-scheme: MajorMinorPatchTag
-=======
-assembly-versioning-scheme: MajorMinorPatch
->>>>>>> Stashed changes
-mode: ContinuousDelivery
-next-version: 1.0.0
+mode: Mainline
 branches:
-  master:
-    regex: (^master$|^origin\/master$|^main$|^origin\/main$)
-  develop:
-    tag: beta
-    increment: Patch
-  feature:
-    mode: ContinuousDeployment
-<<<<<<< Updated upstream
-    tag: ci
-    is-mainline: true
-  pull-request:
-=======
-    tag: useBranchName
   release:
->>>>>>> Stashed changes
+    mode: ContinuousDelivery
+    tag: ''
+  master:
     mode: ContinuousDeployment
-    tag: rc
+    tag: ci
+    regex: (^master$|^origin\/master$|^main$|^origin\/main$)
+  pull-request:
+    mode: ContinuousDeployment
+    tag: pr
   hotfix:
     mode: ContinuousDeployment
-    tag: rc
+    tag: fix
+  feature:
+    mode: ContinuousDeployment
+    tag: wip
 ignore:
   sha: []
+merge-message-formats: {}
