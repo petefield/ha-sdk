@@ -21,8 +21,10 @@ jobs:
       run: wget https://github.com/GitTools/GitVersion/releases/download/5.5.1/gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
+    - name: Show config 
+      run: ./gitversion -showConfig 
     - name: Run GitVersion 
-      run: ./gitversion gitversion.yml -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
+      run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
     - name : show env
       run:  echo $GitVersion_NuGetVersion 
     - name: Install dependencies
