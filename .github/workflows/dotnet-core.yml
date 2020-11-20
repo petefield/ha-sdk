@@ -35,10 +35,10 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name : pack
       run: dotnet pack --output nupkgs /p:Version=$GitVersion_NuGetVersion
-    # - name : push
-    #   env:
-    #       NugetPushKey: ${{ secrets.NugetPushKey }}
-    #   run: dotnet nuget push nupkgs/ha.sdk.$GitVersion_NuGetVersion.nupkg -k $NugetPushKey
+    - name : push
+      env:
+          NugetPushKey: ${{ secrets.NugetPushKey }}
+      run: dotnet nuget push nupkgs/ha.sdk.$GitVersion_NuGetVersion.nupkg -k $NugetPushKey
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
