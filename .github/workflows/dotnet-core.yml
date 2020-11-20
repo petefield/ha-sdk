@@ -22,9 +22,9 @@ jobs:
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Show config 
-      run: ./gitversion -showConfig 
+      run: ./gitversion -config gitversion.yml -showConfig 
     - name: Run GitVersion 
-      run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
+      run: ./gitversion -config gitversion.yml -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
     - name : show env
       run:  echo $GitVersion_NuGetVersion 
     - name: Install dependencies
