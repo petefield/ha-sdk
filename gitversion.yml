@@ -1,13 +1,13 @@
 assembly-versioning-scheme: MajorMinorPatchTag
-mode: ContinuousDelivery
+mode: Mainline
 branches:
   release:
     mode: ContinuousDelivery
     tag: ''
   master:
-    regex: (^master$|^origin\/master$|^main$|^origin\/main$)
     mode: ContinuousDeployment
     tag: ci
+    regex: (^master$|^origin\/master$|^main$|^origin\/main$)
   pull-request:
     mode: ContinuousDeployment
     tag: pr
@@ -19,3 +19,4 @@ branches:
     tag: wip
 ignore:
   sha: []
+merge-message-formats: {}
