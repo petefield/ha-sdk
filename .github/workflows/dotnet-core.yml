@@ -21,8 +21,10 @@ jobs:
       run: wget https://github.com/GitTools/GitVersion/releases/download/5.5.1/gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
     - name: Extract GitVersion
       run: tar -xf gitversion-ubuntu.18.04-x64-5.5.1.tar.gz
-    - name: Run GitVersion
-      run: ./gitversion -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
+    - name: Show config 
+      run: ./gitversion -config gitversion.yml -showConfig 
+    - name: Run GitVersion 
+      run: ./gitversion -config gitversion.yml -updateassemblyinfo AssemblyInfo.cs -ensureassemblyinfo -output buildserver 
     - name : show env
       run:  echo $GitVersion_NuGetVersion 
     - name: Install dependencies
@@ -37,4 +39,12 @@ jobs:
       env:
           NugetPushKey: ${{ secrets.NugetPushKey }}
       run: dotnet nuget push nupkgs/ha.sdk.$GitVersion_NuGetVersion.nupkg -k $NugetPushKey
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: v${{ env.GitVersion_NuGetVersion }}
+        release_name: Release ${{ env.GitVersion_NuGetVersion  }}
   
