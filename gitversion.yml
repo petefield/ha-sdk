@@ -1,22 +1,19 @@
-assembly-versioning-scheme: MajorMinorPatchTag
-mode: Mainline
+assembly-versioning-scheme: MajorMinorPatch
+mode: ContinuousDelivery
+next-version: 1.0.0
 branches:
-  release:
-    mode: ContinuousDelivery
-    tag: ''
-  master:
-    mode: ContinuousDeployment
-    tag: ci
-    regex: (^master$|^origin\/master$|^main$|^origin\/main$)
-  pull-request:
-    mode: ContinuousDeployment
-    tag: pr
-  hotfix:
-    mode: ContinuousDeployment
-    tag: fix
+  develop:
+    tag: beta
+    increment: Patch
   feature:
     mode: ContinuousDeployment
-    tag: wip
+    tag: useBranchName
+  release:
+    mode: ContinuousDeployment
+    tag: rc
+  hotfix:
+    mode: ContinuousDeployment
+    tag: rc
 ignore:
   sha: []
-merge-message-formats: {}
+
