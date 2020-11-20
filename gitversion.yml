@@ -10,7 +10,6 @@ branches:
     regex: (^master$|^origin\/master$|^main$|^origin\/main$)
     mode: ContinuousDeployment
     tag: ci
-    is-mainline: true
   pull-request:
     mode: ContinuousDeployment
     tag: pr
