@@ -1,4 +1,6 @@
-﻿namespace ha.sdk
+using ha.sdk.contracts;
+
+namespace ha.sdk
 {
     public class Command : ICommand
     {
