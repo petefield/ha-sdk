@@ -1,4 +1,4 @@
-﻿using ha.sdk.contracts;
+using ha.sdk.contracts;
 
 namespace ha.sdk
 {
