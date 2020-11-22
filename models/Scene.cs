@@ -1,13 +1,10 @@
-﻿using ha.models.contracts;
-using ha.sdk;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using ha.sdk.contracts;
 
-namespace ha.models
+namespace ha.sdk
 {
     public class Scene : IScene
     {
-
         public Scene()
         {
             Commands = new List<ICommand>();

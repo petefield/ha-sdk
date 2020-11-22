@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using ha.sdk;
 
-namespace ha.models.contracts
+namespace ha.sdk.contracts
 {
     public interface IScene
     {
